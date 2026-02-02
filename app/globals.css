@@ -1,0 +1,73 @@
+@import '@fontsource/inter';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #000000;
+  --surface: #0A0A0A;
+  --accent: #FFFFFF;
+  --success: #00FF88;
+  --warning: #FFCC00;
+  --error: #FF3366;
+  --text-primary: #FFFFFF;
+  --text-secondary: #666666;
+  --divider: #1A1A1A;
+}
+
+/* Lock theme: resist dark-mode extensions and forced color changes */
+html {
+  color-scheme: dark;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+body {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Custom utility classes */
+.card {
+  @apply bg-surface border border-divider rounded-card;
+}
+
+.button-main {
+  @apply bg-accent text-background h-16 rounded-button-main font-sans font-black uppercase tracking-[1.5px] text-button-label;
+}
+
+.button-secondary {
+  @apply border border-accent/10 text-accent rounded-button-secondary font-sans font-black uppercase tracking-[1.5px] text-button-label;
+}
+
+.input-field {
+  @apply bg-surface border border-accent/10 rounded-input px-4 py-3 focus:border-accent focus:outline-none;
+}
+
+/* Selection indicator */
+.selected-item {
+  @apply border-l-4 border-l-accent bg-accent/05 border-accent/20 font-semibold;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--divider);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
